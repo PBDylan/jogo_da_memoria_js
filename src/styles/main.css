@@ -9,6 +9,7 @@ body {
     min-height: 100%;
     background: #fc1e8a;
     margin: 0;
+    user-select: none;
 }
 
 .container {
@@ -73,4 +74,26 @@ h2 {
     justify-content: center;
     align-items: center;
     background-color: #fff;
+
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #404040;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.box_open {
+    transform: rotateY(0deg);
+}
+
+.box_open::after, .box_math::after {
+    transform: rotateY(180deg);
 }
