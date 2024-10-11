@@ -31,11 +31,11 @@ function handle_click() {
         open_cards.push(this);
     }
     if(open_cards.length == 2) {
-        setTimeout(check_match, 500); // Renomear para check_match
+        setTimeout(check_match, 500);
     }
 }
 
-function check_match() { // Renomear para check_match
+function check_match() {
     if(open_cards[0].innerHTML === open_cards[1].innerHTML) {
         open_cards[0].classList.add("box_match");
         open_cards[1].classList.add("box_match");
@@ -46,7 +46,7 @@ function check_match() { // Renomear para check_match
 
     open_cards = [];
 
-    if(document.querySelectorAll(".box_match").lenght === emojis.length){
-        alert("Você venceu !")
+    if(document.querySelectorAll(".box_match").length === emojis.length) { // Correção aqui: length
+        alert("Você venceu!");
     }
 }
